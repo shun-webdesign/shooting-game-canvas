@@ -136,8 +136,11 @@ const update = () => {
     if (time <= 0) status = "Retry";
 
     let fire = false;
-    if ((Math.floor(time) % 20 == 0) && (!enemies.has(time))) {
+
+    // UPDATE HERE: 敵を生成するコードを変更
+    if ((Math.floor(time) % 10 == 0) && (!enemies.has(time))) {
         enemies.set(time, new Enemy());
+        enemies.set(time + 1, new Enemy()); // 追加: さらに別の敵を生成
         enemies = new Map([...enemies].sort((a, b) => a[0] - b[0]));
     }
     enemies.forEach((enemy, i) => {
