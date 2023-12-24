@@ -166,7 +166,7 @@ const update = () => {
     context.strokeRect(cx - 20, cy - 20, 40, 40);
 
     if (status != "Play") {
-        drawText("TIME UP!", cx, cy + 40, 20, "center");
+        drawText("START!", cx, cy + 40, 20, "center");
         time = 600;
         if (status == "Retry") {
             drawText("TIME UP!", cx, cy - 40, 20, "center");
